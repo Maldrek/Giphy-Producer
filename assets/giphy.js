@@ -1,6 +1,11 @@
+$(document).ready(function(){
+
+
 // Creates an array of subjects that will already be populated in the div
 var subjects = ["animals", "cars", "musicals", "technology", "humor", "business", "chemistry"];
 
+
+// This function is called to create new buttons based on user input
 function renderButtons() {
 
     $("#array-buttons").empty();
@@ -20,6 +25,8 @@ $("#add-subject").on("click", function (event) {
     subjects.push(subject);
     renderButtons();
 });
+
+renderButtons();
 
 // This function will create more subject options based on user input
 function displaySubjects() {
@@ -42,3 +49,5 @@ function displaySubjects() {
     })
 
 }
+
+});

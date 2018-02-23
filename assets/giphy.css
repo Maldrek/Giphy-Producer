@@ -15,6 +15,11 @@ h3 {
     text-align: center;
 }
 
+button {
+    margin-left:10px;
+    margin-right:10px;
+}
+
 #array-holder {
     margin-left: 30px;
     margin-right: 30px;
