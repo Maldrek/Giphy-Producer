@@ -4,8 +4,7 @@
 <head>
 
     <title>Page Title</title>
-    <link rel="stylesheet" type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="assets/giphy.css" />
     <script src="assets/giphy.js"></script>
@@ -15,24 +14,40 @@
 
     <div class="webpage">
         <row class="subject-buttons">
-            <div class="jumbotron">
-                <row class="title col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div id="array-holder" class="jumbotron col-lg-10 col-md-10 col-sm-10 col-xs-10 mx-auto mt-5">
+                <row class="title">
                     <h1>Pick a Subject Below!</h1>
                 </row>
+                <hr>
+                <row id="array-buttons"></row>
+            </div>
+        </row>
+        <row>
+            <div id="add-array-buttons" class="jumbotron col-lg-4 col-md-4 col-sm-4 col-xs-4 mt-3 mx-auto">
+                <row>
+                    <h3>Add a Subject Here!</h3>
+                </row>
+                <hr>
+                <row>
+                    <form id="subject-form" class="mx-auto">
+                        <label for="subject-input">Add a Subject!</label>
+                        <input type="text" id="subject-input">
+                        <br>
+                        <br>
+                        <input class="mx-auto btn-primary" id="add-subject" type="submit" value="Add Your Subject Here!">
+                    </form>
+                </row>
+            </div>
+            <div id="giphy-display" class="jumbotron col-lg-11 col-md-11 col-sm-11 col-xs-11 mx-auto mt-5">
+                <row>
+                    <h1 id="Giphy">Click on the Gifs to Start/Stop Them!</h1>
+                </row>
+                <hr id="giphy">
+                <div id="populate-gifs"></div>
+
             </div>
         </row>
     </div>
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 
