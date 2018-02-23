@@ -1,7 +1,25 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 // Creates an array of subjects that will already be populated in the div
 var subjects = ["animals", "cars", "musicals", "technology", "humor", "business", "chemistry"];
+
+function renderButtons() {
+
+    $("#array-buttons").empty();
+
+    for (var i = 0; i < subjects.length; i++) {
+        var a = $("<button>");
+        a.addClass("btn-info subject-button");
+        a.attr("data-name", subjects[i]);
+        a.text(subjects[i]);
+        $("#array-buttons").append(a);
+    }
+}
+
+$("#add-subject").on("click", function (event) {
+    event.preventDefault();
+    var subject = $("#subject-input").val().trim();
+    subjects.push(subject);
+    renderButtons();
+});
 
 // This function will create more subject options based on user input
 function displaySubjects() {
@@ -24,22 +42,3 @@ function displaySubjects() {
     })
 
 }
-
-function renderButtons() {
-    $("#array-buttons").empty();
-
-    for (var i = 0; i < subjects.length; i++) {
-        var a = $("<button>");
-        a.addClass("btn-info subject-button");
-        a.attr("data-name", subjects[i]);
-        a.text(subjects[i]);
-        $("#array-buttons").append(a);
-    }
-}
-
-$("#add-subject").on("click", function (event) {
-    event.preventDefault();
-    var subject = $("#subject-input").val().trim();
-    subjects.push(subject);
-    renderButtons();
-});
