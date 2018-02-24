@@ -27,13 +27,9 @@ button {
     margin-right: 30px;
 }
 
-#add-array-buttons {
-    height: 250px;
-}
-
 #giphy-display {
     background-color: rgb(0, 0, 0);
-    height: 1000px;
+    height:800px;
 }
 
 #Giphy {
@@ -47,3 +43,14 @@ button {
  color:rgb(255, 255, 255);
 }
 
+.float {
+    color: white;
+    float: left;
+}
+
+.start-stop {
+    float: left;
+    height:225px;
+    width: 225px;
+    margin: 10px 20px 10px 0;
+}

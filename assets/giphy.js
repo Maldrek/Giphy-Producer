@@ -12,7 +12,7 @@ function renderButtons() {
 
     for (var i = 0; i < subjects.length; i++) {
         var a = $("<button>");
-        a.addClass("btn-info subject-button");
+        a.addClass("btn btn-info subject-button");
         a.attr("data-name", subjects[i]);
         a.text(subjects[i]);
         $("#array-buttons").append(a);
@@ -29,25 +29,54 @@ $("#add-subject").on("click", function (event) {
 renderButtons();
 
 // This function will create more subject options based on user input
-function displaySubjects() {
+function displaySubjects(subject) {
 
-    var subject = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        subject + "&api_key=dc6zaTOxFJmzC&" + limitOption;
+        subject + "&api_key=p4JC5MhsGo6uW3ZNMEjBKFnZc2bnjMV7&limit=10";
 
-    $ajax({
+    $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function (response) {
         console.log(response);
+        $("#populate-gifs").empty();
+        var results = response;
 
-        var results = response.data;
-
-        for (var i = 0; i < results.length; i++) {
-
-        }
-    })
+        for (var i = 0; i < results.data.length; i++) {
+            var giphy = results.data[i].images.fixed_height_still.url;
+            var gifDiv = document.createElement("DIV");
+            var newGif = document.createElement("IMG");
+            var rating = "Rating: " + results.data[i].rating;
+            newGif.setAttribute("src", giphy);
+            var ratingDiv = document.createElement("P");
+            ratingDiv.textContent = rating;
+            gifDiv.classList.add("float");
+            newGif.classList.add("start-stop");
+            gifDiv.append(newGif);
+            $("#populate-gifs").append(gifDiv);
+            newGif.after(ratingDiv);
+        };
+    });
 
 }
+
+$(document).on("click", ".subject-button", function(){
+    var subject = $(this).attr("data-name");
+    displaySubjects(subject);
+});
+
+// Start and stop the gif playing
+$(document).on('click', '.start-stop', function () {
+    var src = $(this).attr("src");
+    if ($(this).hasClass('playing')) {
+        //stop
+        $(this).attr('src', src.replace(/\.gif/i, "_s.gif"))
+        $(this).removeClass('playing');
+    } else {
+        //play
+        $(this).addClass('playing');
+        $(this).attr('src', src.replace(/\_s.gif/i, ".gif"))
+    }
+});
 
 });
