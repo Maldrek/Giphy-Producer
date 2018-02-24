@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 
 // Creates an array of subjects that will already be populated in the div
-var subjects = ["animals", "cars", "musicals", "technology", "humor", "business", "chemistry"];
+var subjects = ["Animals", "Cars", "Musicals", "Technology", "Humor", "Business", "Chemistry"];
 
 
 // This function is called to create new buttons based on user input
