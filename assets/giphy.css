@@ -47,6 +47,17 @@ button {
     margin: 10px;
 }
 
+#add-array-buttons {
+    display: block;
+    overflow: auto;
+}
+
+form {
+    display: block;
+    overflow: auto;
+    position: relative;
+}
+
 .start-stop {
     float: left;
     height:225px;
