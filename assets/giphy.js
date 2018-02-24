@@ -24,6 +24,7 @@ $("#add-subject").on("click", function (event) {
     var subject = $("#subject-input").val().trim();
     subjects.push(subject);
     renderButtons();
+    $('#subject-input').val("");
 });
 
 renderButtons();
