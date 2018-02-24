@@ -29,7 +29,6 @@ button {
 
 #giphy-display {
     background-color: rgb(0, 0, 0);
-    height:800px;
 }
 
 #Giphy {
@@ -44,8 +43,8 @@ button {
 }
 
 .float {
-    color: white;
     float: left;
+    margin: 10px;
 }
 
 .start-stop {
@@ -53,4 +52,9 @@ button {
     height:225px;
     width: 225px;
     margin: 10px 20px 10px 0;
+}
+
+#populate-gifs {
+    background-color:white;
+    height:600px;
 }
